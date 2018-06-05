@@ -1,5 +1,4 @@
 import React from 'react';
-import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
@@ -13,28 +12,63 @@ class Jail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      alpha: 0,
-      beta: 0,
-      gamma: 0
+      rotationStatus: {
+        0: false,
+        1: false,
+        2: false,
+        3: false
+      }
     };
   }
 
   componentDidMount() {
     if (window.DeviceOrientationEvent) {
-      window.addEventListener('deviceorientation', (event) => {
-        this.setState({
-          ...this.state,
-          alpha: event.alpha,
-          beta: event.beta,
-          gamma: event.gamma
-        });
+      this.setState({
+        ...this.state,
+        orientationListener: window.addEventListener('deviceorientation', this.throttled(10, this.orientationHandler.bind(this)))
       });
     }
+  }
 
-    this.props.increment();
-    this.props.increment();
-    this.props.increment();
-    this.props.increment();
+  componentWillUnmount() {
+    window.removeEventListener('deviceorientation', this.state.orientationListener);
+  }
+
+  orientationHandler(event){
+    let alpha = event.alpha
+    let rotationStatus = {
+      0: this.state.rotationStatus[0] || (alpha >= 1 && alpha < 90),
+      1: this.state.rotationStatus[1] || (alpha >= 90 && alpha < 180),
+      2: this.state.rotationStatus[2] || (alpha >= 180 && alpha < 270),
+      3: this.state.rotationStatus[3] || (alpha >= 270 && alpha < 360)
+    }
+
+    if (rotationStatus[0] === true && rotationStatus[1] === true && rotationStatus[2] === true && rotationStatus[3] === true) {
+      this.props.increment();
+      rotationStatus = {
+        0: false,
+        1: false,
+        2: false,
+        3: false
+      }
+    }
+
+    this.setState({
+      ...this.state,
+      rotationStatus: rotationStatus
+    });
+  }
+
+  throttled(delay, fn) {
+    let lastCall = 0;
+    return function (...args) {
+      const now = (new Date()).getTime();
+      if (now - lastCall < delay) {
+        return;
+      }
+      lastCall = now;
+      return fn(...args);
+    }
   }
 
   render() {
@@ -43,9 +77,10 @@ class Jail extends React.Component {
         <h1>Jail Page</h1>
         <p>You are in Jail!</p>
         <p>Count: {this.props.count}</p>
-        <p>Alpha: {this.state.alpha}</p>
-        <p>Beta: {this.state.beta}</p>
-        <p>Gama: {this.state.gamma}</p>
+        <p>Quadrant 1: { this.state.rotationStatus[0].toString() }</p>
+        <p>Quadrant 2: { this.state.rotationStatus[1].toString() }</p>
+        <p>Quadrant 3: { this.state.rotationStatus[2].toString() }</p>
+        <p>Quadrant 4: { this.state.rotationStatus[3].toString() }</p>
         <p>
           <button onClick={this.props.increment}>
             Increment
