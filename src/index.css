@@ -28,7 +28,6 @@ h3 {
   max-width: 400px;
   position: relative;
   margin: 0 auto;
-  padding: 4% 0%;
 }
 
 .paperframe .teamoverlay {
@@ -116,7 +115,7 @@ img.text_jail {
 }
 
 .card_fight .person-name {
-  padding-top: 80px;
+  padding-top: 40px;
   font-size: 31px;
   text-transform: uppercase;
   font-weight: 700;
