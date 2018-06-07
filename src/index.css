@@ -3,6 +3,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   color: #34322f;
+  margin: 0;
 }
 
 p {
@@ -27,6 +28,7 @@ h3 {
   max-width: 400px;
   position: relative;
   margin: 0 auto;
+  padding: 4% 0%;
 }
 
 .paperframe .teamoverlay {
@@ -202,7 +204,9 @@ div.injail {
 
 /* FREE */
 
-body.page_free {
+div.page_free {
   background-image: url(static/forrest-bg.jpg);
   background-size: 553px;
+  background-repeat: repeat;
+  height: -webkit-fill-available;
 }
