@@ -1,16 +1,208 @@
-html {
-  font-size: 100%;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-    sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
+  background-color: #f6f6f6;
+  font-family: 'Roboto Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  color: #34322f;
 }
 
-button:disabled {
+p {
+  font-size: 14px;
+  line-height: 23px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 31px;
+  line-height: 34px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 14px;
+  margin: 20px 0 5px;
+}
+
+.paperframe {
+  max-width: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.paperframe .teamoverlay {
+  position: relative;
+  left: -45px;
+  transform: rotate(-2deg);
+  max-width: 320px;
+  min-width: 270px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.teamoverlay_logo {
+  float: left;
+  display: inline-block;
+  width: 36px;
+  margin-right: 25px;
+}
+
+.teamoverlay_text {
+  display: inline-block;
+}
+
+.paperframe_top {
+  height: 30px;
+  background-image: url(static/top.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.paperframe_bottom {
+  height: 25px;
+  background-image: url(static/endsmall.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.content {
+  background-image: url(static/middle.png);
+  background-size: 100%;
+  background-repeat: repeat-y;
+  padding: 0 35px 30px;
+}
+
+.teamoverlay .content {
+  padding-bottom: 0;
+}
+
+.content img {
+  margin: 0 auto;
+  display: block;
+}
+
+img.text_jail {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.teamoverlay ul {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.teamoverlay li {
+  list-style: none;
+  margin-bottom: 3px;
+}
+
+.teamoverlay .person-name {
+  font-weight: 700;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+.card_fight {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.card_fight .person-name {
+  padding-top: 80px;
+  font-size: 31px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card_fight .team-name {
+  font-size: 18px;
+  padding-bottom: 50px;
+}
+
+.button-default {
+  min-width: 209px;
+  margin: 0;
+  padding: 13px 24px;
+  background-color: #fff;
+  border: solid 1px #e2e2e2;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.black {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.banner_fight {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.timeremaining {
+  padding-bottom: 70px;
+}
+
+/* IN JAIL */
+
+div.injail {
+  background-color: #000;
+  color: #fff;
+  padding: 0 25px;
+}
+
+.card_injail {
+  max-width: 400px;
+  position: relative;
+  margin: 0 auto;
+  padding: 90px 0 40px;
+}
+
+.card_injail img {
+  display: block;
+  margin: 0 auto 80px;
+}
+
+.divider {
+  width: 42px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  margin-bottom: 41px;
+  margin-top: 37px;
+}
+
+.divider.white {
+  background-color: #fff;
+}
+
+.mercy_text {
   opacity: 0.5;
+}
+
+.content.freedom {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.content.freedom .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.freedom img {
+  margin-bottom: 37px;
+}
+
+/* FREE */
+
+body.page_free {
+  background-image: url(static/forrest-bg.jpg);
+  background-size: 553px;
 }

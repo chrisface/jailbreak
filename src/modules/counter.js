@@ -70,9 +70,9 @@ export const escape = () => {
       type: RESET
     });
 
-    dispatch(push('/'));
+    dispatch(push('/freedom'));
   };
-}
+};
 
 export const increment = () => {
   return dispatch => {
