@@ -48,6 +48,13 @@ h3 {
   margin-right: 25px;
 }
 
+.teamoverlay_logo div{
+  padding-top: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
 .teamoverlay_text {
   display: inline-block;
 }
