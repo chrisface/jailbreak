@@ -6,7 +6,7 @@ import { decrement } from '../../modules/counter';
 
 class Home extends React.Component {
   render() {
-    var battleOn = new Date() < new Date('June 8, 2018 12:30:00');
+    var battleOn = new Date() > new Date('June 8, 2018 13:00:00');
 
     return (
       <div>

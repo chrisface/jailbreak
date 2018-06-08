@@ -101,21 +101,6 @@ class Jail extends React.Component {
             <br />
             Times spun: {this.props.count}
           </p>
-
-          <div className="divider white" />
-
-          {/* }<div className="mercy_text">
-      			<p>Mercy timer<br />
-      			5 min remaining</p>
-      		</div>
-          */}
-          <button
-            onClick={() => {
-              this.props.increment();
-              this.checkFreedom();
-            }}>
-            Increment
-          </button>
         </div>
 
         {/*}
