@@ -9,7 +9,7 @@ class Jail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      spins: 10,
+      spins: 30,
       rotationStatus: {
         0: false,
         1: false,
