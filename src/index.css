@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   color: #34322f;
-  margin: 4%;
+  margin: 0;
 }
 
 p {
@@ -51,9 +51,9 @@ ul.fulloverview {
 
 .paperframe .teamoverlay {
   position: relative;
-  left: -85px;
+  left: -35px;
   transform: rotate(-2deg);
-  max-width: 250px;
+  /* width: 250px; */
   /* min-width: 270px; */
   font-size: 14px;
   margin-bottom: 30px;
@@ -175,10 +175,12 @@ img.text_jail {
 
 /* IN JAIL */
 
-body.injail {
+.injail {
   background-color: #000;
   color: #fff;
   padding: 0 25px;
+  margin: 0;
+  height: -webkit-fill-available;
 }
 
 .card_injail {
@@ -227,9 +229,10 @@ body.injail {
 
 /* FREE */
 
-body.page_free {
+.page_free {
   background-image: url(static/forrest-bg.jpg);
   background-size: 553px;
+  height: -webkit-fill-available;
 }
 
 /* ROOSTER */
@@ -261,8 +264,8 @@ body.page_free {
 
 .rooster_logo {
   float: left;
-  width: 70px;
-  padding: 0 25px;
+  width: 40px;
+  padding: 0 15px;
   text-align: center;
 }
 
