@@ -6,7 +6,7 @@ import { decrement } from '../../modules/counter';
 
 class Home extends React.Component {
   render() {
-    var battleOn = new Date() > new Date('June 8, 2018 13:00:00');
+    var battleOn = new Date() < new Date('June 8, 2018 13:00:00');
 
     return (
       <div>
@@ -18,22 +18,22 @@ class Home extends React.Component {
 
   battleOnSection() {
     return (
-      <div class="paperframe">
-        <div class="paperframe_top" />
-        <div class="content card_fight">
-          <div class="person-name">Capture</div>
-          <div class="banner_fight">
+      <div className="paperframe">
+        <div className="paperframe_top" />
+        <div className="content card_fight">
+          <div className="person-name">Capture</div>
+          <div className="banner_fight">
             <img src="static/battleison.png" width="209" />
           </div>
-          <div class="person-name">the flag</div>
+          <div className="person-name">the flag</div>
 
           <Link to="/jail">
-            <button class="button-default black" type="button">
+            <button className="button-default black" type="button">
               Go to Jail
             </button>
           </Link>
         </div>
-        <div class="paperframe_bottom" />
+        <div className="paperframe_bottom" />
       </div>
     );
   }
@@ -41,15 +41,15 @@ class Home extends React.Component {
   gameInfo() {
     return (
       <div>
-        <div class="paperframe">
-          <div class="paperframe_top" />
-          <div class="content">
-            <div class="paperframe teamoverlay">
-              <div class="paperframe_top" />
-              <div class="content">
-                <div class="teamoverlay_logo" />
-                <div class="teamoverlay_text">
-                  <div class="person-name">Rules & Info</div>
+        <div className="paperframe">
+          <div className="paperframe_top" />
+          <div className="content">
+            <div className="paperframe teamoverlay">
+              <div className="paperframe_top" />
+              <div className="content">
+                <div className="teamoverlay_logo" />
+                <div className="teamoverlay_text">
+                  <div className="person-name">Rules & Info</div>
                   <ul>
                     <li>
                       <a href="#rules">Game rules</a>
@@ -66,46 +66,39 @@ class Home extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div class="paperframe_bottom" />
+              <div className="paperframe_bottom" />
             </div>
-
             <img src="static/forrest1.png" width="33" />
-
             <h2>The goal</h2>
             <p>
               Catch the flag of your opponent’s team. Find it and bring it to
               Nina the mighty game master.
             </p>
-            <p>
-              Each team must select<br />
-              <ul class="fulloverview">
-                <li>1 captain. Connect with Nina on find my friends.</li>
-                <li>1 keeper. Backpack, slingshots, drinks and a map.</li>
-                <li>3 runners.</li>
-                <li>
-                  1 prison guard. To make sure prisoners are respecting the
-                  rules of the prison.
-                </li>
-                <li>2 flag guards.</li>
-              </ul>
-            </p>
-
-            <img src="static/text_jail.png" class="text_jail" width="92" />
+            Each team must select<br />
+            <ul className="fulloverview">
+              <li>1 captain. Connect with Nina on find my friends.</li>
+              <li>1 keeper. Backpack, slingshots, drinks and a map.</li>
+              <li>3 runners.</li>
+              <li>
+                1 prison guard. To make sure prisoners are respecting the rules
+                of the prison.
+              </li>
+              <li>2 flag guards.</li>
+            </ul>
+            <img src="static/text_jail.png" className="text_jail" width="92" />
             <a name="rules" />
             <h3>Rules</h3>
             <p>
               Everybody starts in the prison (in the center of the map), where
               the rules will be explained.
             </p>
-
             <p>
               Hitting other players with your sword Once you are hit, you go to
               jail. Here you must use the app to get out of jail again.
             </p>
-
             <a name="getpoints" />
             <h3>How to get points</h3>
-            <ul class="fulloverview">
+            <ul className="fulloverview">
               <li>
                 Capturing an opposing team’s flag gives your team a point.
               </li>
@@ -123,10 +116,9 @@ class Home extends React.Component {
                 game.
               </li>
             </ul>
-
             <a name="equipment" />
             <h3>Each team will get</h3>
-            <ul class="fulloverview">
+            <ul className="fulloverview">
               <li>1 map</li>
               <li>1 backpack</li>
               <li>5 armors</li>
@@ -134,7 +126,6 @@ class Home extends React.Component {
               <li>1 slingshot</li>
               <li>3 balls</li>
             </ul>
-
             <h3>Powerup Items</h3>
             <p>
               Hats, vests and headbands are considered loot that can spawn in
@@ -143,7 +134,6 @@ class Home extends React.Component {
               getting hit you drop the power up item where you get hit. Power up
               items can be picked up by any other players.
             </p>
-
             <h3>Balls</h3>
             <p>
               {' '}
@@ -151,8 +141,7 @@ class Home extends React.Component {
               the head. Shooting a person in the head makes you go straight to
               prison.
             </p>
-
-            <img src="static/t2.png" class="text_jail" width="40" />
+            <img src="static/t2.png" className="text_jail" width="40" />
             <h3>Attention</h3>
             <p>
               Do not lose anything in the field, there will be an inventory at
@@ -169,41 +158,19 @@ class Home extends React.Component {
           </div>
 
           <a name="roster" />
-          <div class="paperframe_bottom" />
+          <div className="paperframe_bottom" />
 
-          <div class="paperframe_top" />
-          <div class="content rooster">
-            <div style={{ textAlign: 'center' }}>
-              <img
-                src="static/ivar.png"
-                width="40px"
-                style={{ display: 'inline' }}
-              />
-              <img
-                src="static/freja.png"
-                width="40px"
-                style={{ display: 'inline' }}
-              />
-              <img
-                src="static/ragnar.png"
-                width="40px"
-                style={{ display: 'inline' }}
-              />
-              <img
-                src="static/loki.png"
-                width="40px"
-                style={{ display: 'inline' }}
-              />
-            </div>
+          <div className="paperframe_top" />
+          <div className="content rooster">
             <h2>Roster</h2>
 
-            <div class="rooster_team">
-              <div class="rooster_logo">
+            <div className="rooster_team">
+              <div className="rooster_logo">
                 <img src="static/ivar.png" width="40px" />
                 <h4>Ivar</h4>
               </div>
-              <div class="rooster_list">
-                <ul class="fulloverview">
+              <div className="rooster_list">
+                <ul className="fulloverview">
                   <li>Karl</li>
                   <li>Stephanie</li>
                   <li>Cristina</li>
@@ -216,13 +183,13 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div class="rooster_team">
-              <div class="rooster_logo">
+            <div className="rooster_team">
+              <div className="rooster_logo">
                 <img src="static/freja.png" width="70px" />
                 <h4>Freja</h4>
               </div>
-              <div class="rooster_list">
-                <ul class="fulloverview">
+              <div className="rooster_list">
+                <ul className="fulloverview">
                   <li>Andrew</li>
                   <li>Johannes</li>
                   <li>Martin Juhl</li>
@@ -235,13 +202,13 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div class="rooster_team">
-              <div class="rooster_logo">
+            <div className="rooster_team">
+              <div className="rooster_logo">
                 <img src="static/ragnar.png" width="50px" />
                 <h4>Ragnar</h4>
               </div>
-              <div class="rooster_list">
-                <ul class="fulloverview">
+              <div className="rooster_list">
+                <ul className="fulloverview">
                   <li>Maxi</li>
                   <li>Marco</li>
                   <li>Nichlas</li>
@@ -253,13 +220,13 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div class="rooster_team">
-              <div class="rooster_logo">
+            <div className="rooster_team">
+              <div className="rooster_logo">
                 <img src="static/loki.png" width="50px" />
                 <h4>Loki</h4>
               </div>
-              <div class="rooster_list">
-                <ul class="fulloverview">
+              <div className="rooster_list">
+                <ul className="fulloverview">
                   <li>Bjørn</li>
                   <li>Jacob Atzen</li>
                   <li>Jannic</li>
@@ -272,7 +239,7 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <div class="paperframe_bottom" />
+          <div className="paperframe_bottom" />
         </div>
       </div>
     );

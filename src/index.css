@@ -3,13 +3,14 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   color: #34322f;
-  margin: 0;
+  margin: 4%;
 }
 
 p {
   font-size: 14px;
   line-height: 23px;
   margin: 0;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -20,8 +21,26 @@ h2 {
 
 h3 {
   font-weight: 700;
+  font-size: 16px;
+  margin: 40px 0 5px;
+}
+
+a {
+  color: #34322f;
+}
+
+a:visited {
+  color: #34322f;
+}
+
+ul.fulloverview {
   font-size: 14px;
-  margin: 20px 0 5px;
+  /* margin: 0; */
+  padding: 0 10px 0 25px;
+}
+
+.fulloverview li {
+  margin-bottom: 10px;
 }
 
 .paperframe {
@@ -32,10 +51,10 @@ h3 {
 
 .paperframe .teamoverlay {
   position: relative;
-  left: -45px;
+  left: -85px;
   transform: rotate(-2deg);
-  max-width: 320px;
-  min-width: 270px;
+  max-width: 250px;
+  /* min-width: 270px; */
   font-size: 14px;
   margin-bottom: 30px;
 }
@@ -45,13 +64,6 @@ h3 {
   display: inline-block;
   width: 36px;
   margin-right: 25px;
-}
-
-.teamoverlay_logo div{
-  padding-top: 25px;
-  font-weight: bold;
-  text-transform: uppercase;
-
 }
 
 .teamoverlay_text {
@@ -112,10 +124,11 @@ img.text_jail {
 .card_fight {
   text-align: center;
   padding-bottom: 40px;
+  padding-top: 70px;
 }
 
 .card_fight .person-name {
-  padding-top: 40px;
+  /* padding-top: 80px; */
   font-size: 31px;
   text-transform: uppercase;
   font-weight: 700;
@@ -146,10 +159,14 @@ img.text_jail {
   color: #fff;
 }
 
+.card_fight .black {
+  margin-top: 50px;
+}
+
 .banner_fight {
   display: block;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 5px 0;
 }
 
 .timeremaining {
@@ -158,7 +175,7 @@ img.text_jail {
 
 /* IN JAIL */
 
-div.injail {
+body.injail {
   background-color: #000;
   color: #fff;
   padding: 0 25px;
@@ -210,9 +227,45 @@ div.injail {
 
 /* FREE */
 
-div.page_free {
+body.page_free {
   background-image: url(static/forrest-bg.jpg);
   background-size: 553px;
-  background-repeat: repeat;
-  height: -webkit-fill-available;
+}
+
+/* ROOSTER */
+
+.rooster_team {
+  border-top: 2px solid #34322f;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.rooster h2 {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.rooster h3 {
+  font-size: 18px;
+}
+
+.rooster_list ul {
+  list-style: none;
+  margin: 0 0 0 25px;
+  padding: 0;
+}
+
+.rooster_list li {
+  margin-bottom: 10px;
+}
+
+.rooster_logo {
+  float: left;
+  width: 70px;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.rooster_list {
+  display: inline-block;
 }
