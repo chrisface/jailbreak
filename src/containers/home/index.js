@@ -2,39 +2,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {
-  decrement
-} from '../../modules/counter';
+import { decrement } from '../../modules/counter';
 
 class Home extends React.Component {
   render() {
-    var battleOn = new Date() < new Date("June 8, 2018 12:30:00");
+    var battleOn = new Date() < new Date('June 8, 2018 12:30:00');
 
     return (
       <div>
-        { battleOn ? this.battleOnSection() : null }
-        { this.gameInfo() }
+        {battleOn ? this.battleOnSection() : null}
+        {this.gameInfo()}
       </div>
     );
-
   }
 
   battleOnSection() {
     return (
       <div class="paperframe">
-        <div class="paperframe_top"></div>
+        <div class="paperframe_top" />
         <div class="content card_fight">
-
           <div class="person-name">Capture</div>
           <div class="banner_fight">
-            <img src="static/battleison.png" width="209"/>
+            <img src="static/battleison.png" width="209" />
           </div>
           <div class="person-name">the flag</div>
 
-          <Link to="/jail"><button class="button-default black" type="button">Go to Jail</button></Link>
-
+          <Link to="/jail">
+            <button class="button-default black" type="button">
+              Go to Jail
+            </button>
+          </Link>
         </div>
-        <div class="paperframe_bottom"></div>
+        <div class="paperframe_bottom" />
       </div>
     );
   }
@@ -43,178 +42,238 @@ class Home extends React.Component {
     return (
       <div>
         <div class="paperframe">
+          <div class="paperframe_top" />
+          <div class="content">
+            <div class="paperframe teamoverlay">
+              <div class="paperframe_top" />
+              <div class="content">
+                <div class="teamoverlay_logo" />
+                <div class="teamoverlay_text">
+                  <div class="person-name">Rules & Info</div>
+                  <ul>
+                    <li>
+                      <a href="#rules">Game rules</a>
+                    </li>
+                    <li>
+                      <a href="#getpoints">Getting points</a>
+                    </li>
+                    <li>
+                      <a href="#equipment">Equipment</a>
+                    </li>
+                    <li>
+                      <a href="#roster">Roster</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="paperframe_bottom" />
+            </div>
 
-        <div class="paperframe_top"></div>
-        <div class="content">
+            <img src="static/forrest1.png" width="33" />
 
-  				<div class="paperframe teamoverlay">
-  					<div class="paperframe_top"></div>
-  					<div class="content">
-  						<div class="teamoverlay_logo">
-  						</div>
-  						<div class="teamoverlay_text">
-  							<div class="person-name">Rules & Info</div>
-  							<ul>
-  								<li><a href="#rules">Game rules</a></li>
-  								<li><a href="#getpoints">Getting points</a></li>
-  								<li><a href="#equipment">Equipment</a></li>
-  								<li><a href="#roster">Roster</a></li>
-  							</ul>
-  						</div>
-  					</div>
-  					<div class="paperframe_bottom"></div>
-  				</div>
+            <h2>The goal</h2>
+            <p>
+              Catch the flag of your opponent’s team. Find it and bring it to
+              Nina the mighty game master.
+            </p>
+            <p>
+              Each team must select<br />
+              <ul class="fulloverview">
+                <li>1 captain. Connect with Nina on find my friends.</li>
+                <li>1 keeper. Backpack, slingshots, drinks and a map.</li>
+                <li>3 runners.</li>
+                <li>
+                  1 prison guard. To make sure prisoners are respecting the
+                  rules of the prison.
+                </li>
+                <li>2 flag guards.</li>
+              </ul>
+            </p>
 
-        	<img src="static/forrest1.png" width="33"/>
+            <img src="static/text_jail.png" class="text_jail" width="92" />
+            <a name="rules" />
+            <h3>Rules</h3>
+            <p>
+              Everybody starts in the prison (in the center of the map), where
+              the rules will be explained.
+            </p>
 
-          <h2>The goal</h2>
-          <p>Catch the flag of your opponent’s team.
-  Find it and bring it to Nina the mighty game master.</p>
-  				<p>
-  					Each team must select<br />
-  					<ul class="fulloverview">
-  						<li>1 captain. Connect with Nina on find my friends.</li>
-  						<li>1 keeper. Backpack, slingshots, drinks and a map.</li>
-  						<li>3 runners.</li>
-  						<li>1 prison guard. To make sure prisoners are respecting the rules of the prison.</li>
-  						<li>1 flag guard.</li>
-  					</ul>
-  				</p>
+            <p>
+              Hitting other players with your sword Once you are hit, you go to
+              jail. Here you must use the app to get out of jail again.
+            </p>
 
+            <a name="getpoints" />
+            <h3>How to get points</h3>
+            <ul class="fulloverview">
+              <li>
+                Capturing an opposing team’s flag gives your team a point.
+              </li>
+              <li>
+                The round ends when there is only one team with their flag left.
+              </li>
+              <li>
+                When your flag is captured, your team is not allowed to try to
+                get other teams flags but your team members can still fight and
+                imprison other players.
+              </li>
+              <li>You can get a maximum of 3 points per round.</li>
+              <li>
+                The team with the most points at the end of all rounds, wins the
+                game.
+              </li>
+            </ul>
 
-  				<img src="static/text_jail.png" class="text_jail" width="92"/>
-  				<a name="rules"></a>
-  				<h3>Rules</h3>
-  				<p>Everybody starts in the prison (in the center of the map), where the rules will be explained.</p>
+            <a name="equipment" />
+            <h3>Each team will get</h3>
+            <ul class="fulloverview">
+              <li>1 map</li>
+              <li>1 backpack</li>
+              <li>5 armors</li>
+              <li>1 flag</li>
+              <li>1 slingshot</li>
+              <li>3 balls</li>
+            </ul>
 
-  				<p>Hitting other players with your sword
-  				Once you are hit, you go to jail. Here you must use the app to get out of jail again.</p>
+            <h3>Powerup Items</h3>
+            <p>
+              Hats, vests and headbands are considered loot that can spawn in
+              various places. With a hat, vest or headband, you can endure two
+              hits (as opposed to only one without the power up item). After
+              getting hit you drop the power up item where you get hit. Power up
+              items can be picked up by any other players.
+            </p>
 
+            <h3>Balls</h3>
+            <p>
+              {' '}
+              Use the balls to take down other players. There is no aiming for
+              the head. Shooting a person in the head makes you go straight to
+              prison.
+            </p>
 
+            <img src="static/t2.png" class="text_jail" width="40" />
+            <h3>Attention</h3>
+            <p>
+              Do not lose anything in the field, there will be an inventory at
+              the end of the game. Each team is responsible for the things they
+              get. Remember Torup is a sustainable village so we can’t leave
+              anything behind!
+            </p>
+            <p>Fire is not allowed.</p>
+            <p>No smoking on battle rounds.</p>
+            <p>
+              Each team is responsible to set up their own communication system
+              (messenger, calls, skype, slack, sms) you decide!
+            </p>
+          </div>
 
+          <a name="roster" />
+          <div class="paperframe_bottom" />
 
-  				<a name="getpoints"></a>
-  				<h3>How to get points</h3>
-  				<ul class="fulloverview">
-  					<li>Capturing an opposing team’s flag gives your team a point.</li>
-  					<li>The round ends when there is only one team with their flag left.</li>
-  					<li>When your flag is taken, your team is not allowed to try to get other teams flags but your team members can still fight and imprison other players.</li>
-  					<li>You can get a maximum of 3 points per round.</li>
-  					<li>The team with the most points at the end of all rounds, wins the game.</li>
-  				</ul>
+          <div class="paperframe_top" />
+          <div class="content rooster">
+            <div style={{ textAlign: 'center' }}>
+              <img
+                src="static/ivar.png"
+                width="40px"
+                style={{ display: 'inline' }}
+              />
+              <img
+                src="static/freja.png"
+                width="40px"
+                style={{ display: 'inline' }}
+              />
+              <img
+                src="static/ragnar.png"
+                width="40px"
+                style={{ display: 'inline' }}
+              />
+              <img
+                src="static/loki.png"
+                width="40px"
+                style={{ display: 'inline' }}
+              />
+            </div>
+            <h2>Roster</h2>
 
+            <div class="rooster_team">
+              <div class="rooster_logo">
+                <img src="static/ivar.png" width="40px" />
+                <h4>Ivar</h4>
+              </div>
+              <div class="rooster_list">
+                <ul class="fulloverview">
+                  <li>Karl</li>
+                  <li>Stephanie</li>
+                  <li>Cristina</li>
+                  <li>Almir</li>
+                  <li>David</li>
+                  <li>Jakob Janot</li>
+                  <li>Kenn</li>
+                  <li>Dinaesh</li>
+                </ul>
+              </div>
+            </div>
 
-  				<a name="equipment"></a>
-  				<h3>Each team will get</h3>
-  				<ul class="fulloverview">
-  					<li>1 map</li>
-  					<li>1 backpack</li>
-  					<li>5 armors</li>
-  					<li>1 flag</li>
-  					<li>3 balls</li>
-  				</ul>
+            <div class="rooster_team">
+              <div class="rooster_logo">
+                <img src="static/freja.png" width="70px" />
+                <h4>Freja</h4>
+              </div>
+              <div class="rooster_list">
+                <ul class="fulloverview">
+                  <li>Andrew</li>
+                  <li>Johannes</li>
+                  <li>Martin Juhl</li>
+                  <li>Niels</li>
+                  <li>Pedro</li>
+                  <li>Chris</li>
+                  <li>Zamand</li>
+                  <li>Tim</li>
+                </ul>
+              </div>
+            </div>
 
-  				<h3>Hats</h3>
-  				<p>With a hat/vest, you can get hit twice. After getting hit you drop the hat/vest where you are.	Lost hats can be picked up by any other player.</p>
+            <div class="rooster_team">
+              <div class="rooster_logo">
+                <img src="static/ragnar.png" width="50px" />
+                <h4>Ragnar</h4>
+              </div>
+              <div class="rooster_list">
+                <ul class="fulloverview">
+                  <li>Maxi</li>
+                  <li>Marco</li>
+                  <li>Nichlas</li>
+                  <li>Nynne</li>
+                  <li>Jeppe Foverskov</li>
+                  <li>Sebastian</li>
+                  <li>Rajesh</li>
+                </ul>
+              </div>
+            </div>
 
-  				<h3>Balls</h3>
-  				<p> Use the balls to take down other players. There is no aiming for the head. Shooting a person in the head makes you go straight to prison.
-  				</p>
-
-  				<img src="static/t2.png" class="text_jail" width="40"/>
-  				<h3>Attention</h3>
-  					<p>Do not lose anything in the field, there will be an inventory at the end of the game. Each team is responsible for the things they get. Remember Torup is a sustainable village so we can’t leave anything behind!</p>
-  					<p>Fire is not allowed.</p>
-  					<p>No smoking on battle rounds.</p>
-  					<p>Each team is responsible to set up their own communication system (messenger, calls, skype, slack, sms) you decide!</p>
-
-
-  			</div>
-
-        <a name="roster"></a>
-        <div class="paperframe_bottom"></div>
-
-  			<div class="paperframe_top"></div>
-  			<div class="content rooster">
-  				<h2>Roster</h2>
-
-  				<div class="rooster_team">
-  					<div class="rooster_logo">
-  						<img src="static/ivar.png" width="40px"/>
-  						<h4>Ivar</h4>
-  					</div>
-  					<div class="rooster_list">
-  						<ul class="fulloverview">
-  							<li>Karl</li>
-  							<li>Stephanie</li>
-  							<li>Cristina</li>
-  							<li>Almir</li>
-  							<li>David</li>
-  							<li>Jakob Janot</li>
-  							<li>Kenn</li>
-  							<li>Dinaesh</li>
-  						</ul>
-  					</div>
-  				</div>
-
-  				<div class="rooster_team">
-  					<div class="rooster_logo">
-  						<img src="static/freja.png" width="70px"/>
-  						<h4>Freja</h4>
-  					</div>
-  					<div class="rooster_list">
-  						<ul class="fulloverview">
-  							<li>Andrew</li>
-  							<li>Johannes</li>
-  							<li>Martin Juhl</li>
-  							<li>Niels</li>
-  							<li>Pedro</li>
-  							<li>Chris</li>
-  							<li>Zamand</li>
-  							<li>Tim</li>
-  						</ul>
-  					</div>
-  				</div>
-
-  				<div class="rooster_team">
-  					<div class="rooster_logo">
-  						<img src="static/ragnar.png" width="50px"/>
-  						<h4>Ragnar</h4>
-  					</div>
-  					<div class="rooster_list">
-  						<ul class="fulloverview">
-  							<li>Maxi</li>
-  							<li>Marco</li>
-  							<li>Nichlas</li>
-  							<li>Nynne</li>
-  							<li>Jeppe Foverskov</li>
-  							<li>Sebastian</li>
-  							<li>Rajesh</li>
-  						</ul>
-  					</div>
-  				</div>
-
-  				<div class="rooster_team">
-  					<div class="rooster_logo">
-  						<img src="static/loki.png" width="50px"/>
-  						<h4>Loki</h4>
-  					</div>
-  					<div class="rooster_list">
-  						<ul class="fulloverview">
-  							<li>Bjørn</li>
-  							<li>Jacob Atzen</li>
-  							<li>Jannic</li>
-  							<li>HP</li>
-  							<li>Peter Ericson</li>
-  							<li>Jeppe Liisberg</li>
-  							<li>Troels</li>
-  							<li>Susan</li>
-  						</ul>
-  					</div>
-  				</div>
-  			</div>
-  			<div class="paperframe_bottom"></div>
-      </div>
+            <div class="rooster_team">
+              <div class="rooster_logo">
+                <img src="static/loki.png" width="50px" />
+                <h4>Loki</h4>
+              </div>
+              <div class="rooster_list">
+                <ul class="fulloverview">
+                  <li>Bjørn</li>
+                  <li>Jacob Atzen</li>
+                  <li>Jannic</li>
+                  <li>HP</li>
+                  <li>Peter Ericson</li>
+                  <li>Jeppe Liisberg</li>
+                  <li>Troels</li>
+                  <li>Susan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="paperframe_bottom" />
+        </div>
       </div>
     );
   }
